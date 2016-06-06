@@ -1,0 +1,46 @@
+status command against PureFTPD docker container:
+
+ftp> dir
+229 Extended Passive mode OK (|||30000|)
+150 Accepted data connection
+-rw-r--r--    1 0          0                   0 Jun  2 21:17 myfile.txt
+-rw-r--r--    1 1000       ftpgroup           13 Jun  2 21:17 some-file.txt
+drwxr-xr-x    2 0          0                4096 Jun  2 20:48 test
+226-Options: -l 
+226 3 matches total
+
+ftp> status
+Connected to localhost.
+No proxy connection.
+Mode: stream; Type: binary; Form: non-print; Structure: file
+Verbose: on; Bell: off; Prompting: on; Globbing: on
+Store unique: off; Receive unique: off
+Case: off; CR stripping: on
+Ntrans: off
+Nmap: off
+Hash mark printing: off; Use of PORT cmds: on
+Tick counter printing: off
+
+ftp> status myfile.txt
+Connected to localhost.
+No proxy connection.
+Mode: stream; Type: binary; Form: non-print; Structure: file
+Verbose: on; Bell: off; Prompting: on; Globbing: on
+Store unique: off; Receive unique: off
+Case: off; CR stripping: on
+Ntrans: off
+Nmap: off
+Hash mark printing: off; Use of PORT cmds: on
+Tick counter printing: off
+
+ftp> status non_existant_file.txt
+Connected to localhost.
+No proxy connection.
+Mode: stream; Type: binary; Form: non-print; Structure: file
+Verbose: on; Bell: off; Prompting: on; Globbing: on
+Store unique: off; Receive unique: off
+Case: off; CR stripping: on
+Ntrans: off
+Nmap: off
+Hash mark printing: off; Use of PORT cmds: on
+Tick counter printing: off
