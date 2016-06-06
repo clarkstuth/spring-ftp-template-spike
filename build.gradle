@@ -1,0 +1,5 @@
+apply plugin: 'java'
+
+dependencies {
+    compile group: 'org.springframework.integration', name: 'spring-integration-ftp', version: '4.2.6.RELEASE'
+}
